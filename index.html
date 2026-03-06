@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" id="html-theme">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Git Games – Wikipedia dos games</title>
+    <title>Git Games – Wikipedia dos Games</title>
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
@@ -14,9 +14,20 @@
           <a href="index.html">Home</a>
           <a href="explorar.html">Explorar</a>
           <a href="fale-conosco.html">Fale Conosco</a>
+          <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+            <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+            <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+          </button>
         </nav>
       </div>
     </header>
+
+    <!-- Banner topo – área para futura monetização -->
+    <aside class="banner-slot banner-slot--top" id="banner-top" aria-label="Espaço para banner">
+      <div class="banner-slot-inner">
+        <span class="banner-slot-label">Banner (monetização)</span>
+      </div>
+    </aside>
 
     <main>
       <section class="page-section">
@@ -28,19 +39,60 @@
         <h2>Em destaque</h2>
         <div class="card-grid" id="destaques">
           <a href="jogos/hollow-knight.html" class="game-card">
-            <img class="game-card-image" src="https://placehold.co/320x200/161b22/a371f7?text=Hollow+Knight" alt="">
+            <img class="game-card-image" src="image.png" alt="Hollow Knight">
             <div class="game-card-body">
               <h3 class="game-card-title">Hollow Knight</h3>
               <p class="game-card-meta">Metroidvania · 2017</p>
             </div>
           </a>
           <a href="jogos/celeste.html" class="game-card">
-            <img class="game-card-image" src="https://placehold.co/320x200/161b22/3fb950?text=Celeste" alt="">
+            <img class="game-card-image" src="image copy.png" alt="Celeste">
             <div class="game-card-body">
               <h3 class="game-card-title">Celeste</h3>
               <p class="game-card-meta">Plataforma · 2018</p>
             </div>
           </a>
+          <a href="explorar.html" class="game-card">
+            <img class="game-card-image" src="image copy 2.png" alt="Super Mario Galaxy">
+            <div class="game-card-body">
+              <h3 class="game-card-title">Super Mario Galaxy</h3>
+              <p class="game-card-meta">Plataforma · 2007</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Banner meio – área para futura monetização -->
+      <aside class="banner-slot banner-slot--mid" id="banner-mid" aria-label="Espaço para banner">
+        <div class="banner-slot-inner">
+          <span class="banner-slot-label">Banner (monetização)</span>
+        </div>
+      </aside>
+
+      <section class="page-section tetris-section">
+        <h2>Jogue Tetris</h2>
+        <p class="tetris-intro">Dê uma pausa e encaixe as peças. Use as setas ou WASD para mover e girar.</p>
+        <div class="tetris-wrap">
+          <div class="tetris-sidebar">
+            <div class="tetris-info">
+              <p><strong>Pontuação</strong> <span id="tetris-score">0</span></p>
+              <p><strong>Nível</strong> <span id="tetris-level">1</span></p>
+              <p><strong>Linhas</strong> <span id="tetris-lines">0</span></p>
+            </div>
+            <div class="tetris-next">
+              <p><strong>Próxima</strong></p>
+              <canvas id="tetris-next" width="100" height="80" aria-hidden="true"></canvas>
+            </div>
+            <div class="tetris-controls">
+              <p><strong>Controles</strong></p>
+              <span>← → mover</span>
+              <span>↑ ou W girar</span>
+              <span>↓ ou S descer</span>
+              <span>Espaço hard drop</span>
+            </div>
+            <button type="button" class="tetris-btn" id="tetris-start">Iniciar jogo</button>
+          </div>
+          <canvas id="tetris-canvas" width="300" height="600" tabindex="0" aria-label="Campo do Tetris"></canvas>
         </div>
       </section>
 
@@ -50,17 +102,24 @@
         <input type="search" id="busca-jogos" class="input-search" placeholder="Buscar por nome do jogo..." aria-label="Buscar jogos">
         <div class="card-grid game-list" id="lista-jogos">
           <a href="jogos/hollow-knight.html" class="game-card" data-game-name="Hollow Knight">
-            <img class="game-card-image" src="https://placehold.co/320x200/161b22/a371f7?text=Hollow+Knight" alt="">
+            <img class="game-card-image" src="image.png" alt="Hollow Knight">
             <div class="game-card-body">
               <h3 class="game-card-title">Hollow Knight</h3>
               <p class="game-card-meta">Metroidvania · 2017</p>
             </div>
           </a>
           <a href="jogos/celeste.html" class="game-card" data-game-name="Celeste">
-            <img class="game-card-image" src="https://placehold.co/320x200/161b22/3fb950?text=Celeste" alt="">
+            <img class="game-card-image" src="image copy.png" alt="Celeste">
             <div class="game-card-body">
               <h3 class="game-card-title">Celeste</h3>
               <p class="game-card-meta">Plataforma · 2018</p>
+            </div>
+          </a>
+          <a href="explorar.html" class="game-card" data-game-name="Super Mario Galaxy">
+            <img class="game-card-image" src="image copy 2.png" alt="Super Mario Galaxy">
+            <div class="game-card-body">
+              <h3 class="game-card-title">Super Mario Galaxy</h3>
+              <p class="game-card-meta">Plataforma · 2007</p>
             </div>
           </a>
           <a href="jogos/exemplo-jogo.html" class="game-card" data-game-name="Exemplo Jogo">
@@ -75,6 +134,13 @@
       </section>
     </main>
 
+    <!-- Banner rodapé – área para futura monetização -->
+    <aside class="banner-slot banner-slot--bottom" id="banner-bottom" aria-label="Espaço para banner">
+      <div class="banner-slot-inner">
+        <span class="banner-slot-label">Banner (monetização)</span>
+      </div>
+    </aside>
+
     <footer class="site-footer">
       <div class="site-footer-inner">
         Git Games – Wikipedia dos games. Dicas, truques e recomendações.
@@ -82,5 +148,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/tetris.js"></script>
   </body>
 </html>

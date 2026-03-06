@@ -42,6 +42,20 @@
   --wide-max: 960px;
 }
 
+/* Tema claro (ativado pelo botão lua/sol) */
+[data-theme="light"],
+html.theme-light {
+  --bg-page: #f6f8fa;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f0f2f5;
+  --text-primary: #1f2328;
+  --text-secondary: #424a53;
+  --text-muted: #656d76;
+  --border: #d0d7de;
+  --border-muted: #eaeef2;
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
 /* --- Base --- */
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -139,6 +153,87 @@ p {
 
 .site-nav a:hover {
   color: var(--accent-blue);
+}
+
+/* Botão tema (lua / sol) */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: var(--bg-card-hover);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.theme-toggle:hover {
+  background: var(--border-muted);
+  border-color: var(--accent-blue);
+}
+
+.theme-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+/* Escuro: mostra sol (clique para ir para claro) */
+.theme-icon-sun {
+  display: none;
+}
+
+[data-theme="light"] .theme-icon-sun,
+.theme-light .theme-icon-sun {
+  display: inline;
+}
+
+[data-theme="light"] .theme-icon-moon,
+.theme-light .theme-icon-moon {
+  display: none;
+}
+
+/* --- Banners (monetização) --- */
+.banner-slot {
+  width: 100%;
+  max-width: var(--wide-max);
+  margin: 0 auto;
+  padding: var(--space-sm) var(--space-lg);
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-slot-inner {
+  width: 100%;
+  min-height: 70px;
+  background: var(--bg-card);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-slot-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.banner-slot--top {
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-sm);
+}
+
+.banner-slot--mid {
+  padding: var(--space-lg) var(--space-lg);
+}
+
+.banner-slot--bottom {
+  padding: var(--space-md) var(--space-lg);
 }
 
 /* --- Footer --- */
@@ -288,3 +383,97 @@ p {
 }
 
 .text-muted { color: var(--text-muted); font-size: 0.9rem; }
+
+/* --- Tetris --- */
+.tetris-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.tetris-intro {
+  margin-bottom: var(--space-md);
+  color: var(--text-secondary);
+}
+
+.tetris-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xl);
+  align-items: flex-start;
+}
+
+#tetris-canvas {
+  display: block;
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  outline: none;
+}
+
+#tetris-canvas:focus {
+  border-color: var(--accent-blue);
+}
+
+.tetris-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  min-width: 160px;
+}
+
+.tetris-info p,
+.tetris-next p,
+.tetris-controls p {
+  margin: 0 0 var(--space-sm);
+  font-size: 0.9rem;
+}
+
+.tetris-info span,
+.tetris-level span,
+.tetris-lines span {
+  color: var(--accent-green);
+  font-variant-numeric: tabular-nums;
+}
+
+.tetris-next canvas {
+  display: block;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-top: var(--space-xs);
+}
+
+.tetris-controls {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.tetris-controls span {
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.tetris-btn {
+  padding: var(--space-sm) var(--space-md);
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--bg-page);
+  background: var(--accent-green);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.tetris-btn:hover {
+  background: #46c25c;
+}
+
+.tetris-btn:active {
+  transform: scale(0.98);
+}
+
+.tetris-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
