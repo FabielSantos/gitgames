@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Git Games – Wikipedia dos games</title>
+    <title>Explorar – Git Games</title>
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
@@ -20,13 +20,31 @@
 
     <main>
       <section class="page-section">
-        <h1>Git Games</h1>
-        <p>Recomendações, dicas e truques de jogos. Uma enciclopédia feita por jogadores.</p>
+        <h1>Explorar</h1>
+        <p>Navegue pelos jogos por categoria.</p>
       </section>
 
       <section class="page-section">
-        <h2>Em destaque</h2>
-        <div class="card-grid" id="destaques">
+        <h2>Categorias</h2>
+        <div class="card-grid">
+          <a href="categorias/acao.html" class="game-card">
+            <div class="game-card-body">
+              <h3 class="game-card-title">Ação</h3>
+              <p class="game-card-meta">Jogos de ação e metroidvania</p>
+            </div>
+          </a>
+          <a href="categorias/plataforma.html" class="game-card">
+            <div class="game-card-body">
+              <h3 class="game-card-title">Plataforma</h3>
+              <p class="game-card-meta">Jogos de plataforma</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <h2>Todos os jogos</h2>
+        <div class="card-grid">
           <a href="jogos/hollow-knight.html" class="game-card">
             <img class="game-card-image" src="https://placehold.co/320x200/161b22/a371f7?text=Hollow+Knight" alt="">
             <div class="game-card-body">
@@ -41,29 +59,7 @@
               <p class="game-card-meta">Plataforma · 2018</p>
             </div>
           </a>
-        </div>
-      </section>
-
-      <section class="page-section">
-        <h2>Todos os jogos</h2>
-        <label for="busca-jogos" class="visually-hidden">Buscar jogos</label>
-        <input type="search" id="busca-jogos" class="input-search" placeholder="Buscar por nome do jogo..." aria-label="Buscar jogos">
-        <div class="card-grid game-list" id="lista-jogos">
-          <a href="jogos/hollow-knight.html" class="game-card" data-game-name="Hollow Knight">
-            <img class="game-card-image" src="https://placehold.co/320x200/161b22/a371f7?text=Hollow+Knight" alt="">
-            <div class="game-card-body">
-              <h3 class="game-card-title">Hollow Knight</h3>
-              <p class="game-card-meta">Metroidvania · 2017</p>
-            </div>
-          </a>
-          <a href="jogos/celeste.html" class="game-card" data-game-name="Celeste">
-            <img class="game-card-image" src="https://placehold.co/320x200/161b22/3fb950?text=Celeste" alt="">
-            <div class="game-card-body">
-              <h3 class="game-card-title">Celeste</h3>
-              <p class="game-card-meta">Plataforma · 2018</p>
-            </div>
-          </a>
-          <a href="jogos/exemplo-jogo.html" class="game-card" data-game-name="Exemplo Jogo">
+          <a href="jogos/exemplo-jogo.html" class="game-card">
             <img class="game-card-image" src="https://placehold.co/320x200/161b22/58a6ff?text=Exemplo+Jogo" alt="">
             <div class="game-card-body">
               <h3 class="game-card-title">Exemplo Jogo</h3>
@@ -71,7 +67,6 @@
             </div>
           </a>
         </div>
-        <p id="nenhum-resultado" class="text-muted" style="display: none;">Nenhum jogo encontrado.</p>
       </section>
     </main>
 
@@ -80,7 +75,5 @@
         Git Games – Wikipedia dos games. Dicas, truques e recomendações.
       </div>
     </footer>
-
-    <script src="js/main.js"></script>
   </body>
 </html>
